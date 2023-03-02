@@ -48,6 +48,14 @@ function getWeather(data) {
             currentHumidityEl.text(`Humidity: ${currentCityHumidity}%`)
             currentConditionsEl.append(currentHumidityEl);
 
+            var fiveDayForecastEl = $('#fiveDayForecast');
+            var fiveDayForecastHeaderEl = $('#fiveDayForecastHeader');
+            var fiveDayHeaderEl = $('<h2>');
+            fiveDayHeaderEl.text('5-Day Forecast: ');
+            fiveDayForecastHeaderEl.append(fiveDayHeaderEl);
+
+
+
         })
 
 
