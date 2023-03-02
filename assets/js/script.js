@@ -6,6 +6,38 @@ var searchBtn = $("#search-button");
 var clearBtn = $("#clear-button");
 var pastSearchedCitiesEl = $("#past-searches");
 
+function getCoordinates() {
+  var requestURL = `https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=${APIkey}`;
+  var storedCities = JSON.parse(localStorage.getItem("cities")) || [];
+
+  fetch(requestURL)
+    .then(function (response) {
+      if (response.status >= 200 && response.status <= 299) {
+        return response.json();
+      } else {
+        throw Error(response.statusText);
+      }
+    })
+    .then(function (data) {
+      var cityInfo = {
+        city: currentCity,
+        lon: data.coord.lon,
+        lat: data.coord.lat,
+      };
+
+      storedCities.push(cityInfo);
+      localStorage.setItem("cities", JSON.stringify(storiedCities));
+
+      displaySearchHistory();
+
+      return cityInfo;
+    })
+    .then(function (data) {
+      getWeather(data);
+    });
+  return;
+}
+
 function getWeather(data) {
   var requestURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${data.lat}&lon=${data.lon}&exclude=minutely,hourly,alerts&units=metric&appid=${APIkey}`;
   fetch(requestURL)
@@ -85,18 +117,17 @@ function getWeather(data) {
 }
 
 function displaySearchHistory() {
-    var storedCities = JSON.parse(localStorage.getItem("cities")) || [];
-    var pastSearchesEl = document.getElementById('past-searches');
+  var storedCities = JSON.parse(localStorage.getItem("cities")) || [];
+  var pastSearchesEl = document.getElementById("past-searches");
 
-    pastSearchesEl.innerHTML ='';
+  pastSearchesEl.innerHTML = "";
 
-    for (i = 0; i < storedCities.length; i++) {
-        
-        var pastCityBtn = document.createElement("button");
-        pastCityBtn.classList.add("btn", "btn-primary", "my-2", "past-city");
-        pastCityBtn.setAttribute("style", "width: 100%");
-        pastCityBtn.textContent = `${storedCities[i].city}`;
-        pastSearchesEl.appendChild(pastCityBtn);
-    }
-    return;
+  for (i = 0; i < storedCities.length; i++) {
+    var pastCityBtn = document.createElement("button");
+    pastCityBtn.classList.add("btn", "btn-primary", "my-2", "past-city");
+    pastCityBtn.setAttribute("style", "width: 100%");
+    pastCityBtn.textContent = `${storedCities[i].city}`;
+    pastSearchesEl.appendChild(pastCityBtn);
+  }
+  return;
 }
