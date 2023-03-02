@@ -13,7 +13,19 @@ function getWeather(data) {
             return response.json();
         })
         .then(function(data){
-            
+
+            var currentConditionsEl = $('#currentConditions');
+            currentConditionsEl.addClass('border border-primary');
+
+            var cityNameEl = $('<h2>');
+            cityNameEl.text(currentCity);
+            currentConditionsEl.append(cityNameEL);
+
+            var currentCityDate = data.curent.dt;
+            currentCityDate = moment.unix(currentCityDate).format('MM/DD/YYYY');
+            var currentDateEL = $('<span>');
+            currentDateEL.text(` (${currentCityDate}) `);
+            cityNameEl.append(currentDateEL);
         })
 
 }
