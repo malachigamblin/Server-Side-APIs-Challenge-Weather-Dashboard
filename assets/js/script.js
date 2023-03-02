@@ -21,12 +21,36 @@ function getWeather(data) {
             cityNameEl.text(currentCity);
             currentConditionsEl.append(cityNameEL);
 
-            var currentCityDate = data.curent.dt;
+            var currentCityDate = data.current.dt;
             currentCityDate = moment.unix(currentCityDate).format('MM/DD/YYYY');
             var currentDateEL = $('<span>');
             currentDateEL.text(` (${currentCityDate}) `);
             cityNameEl.append(currentDateEL);
+
+
+            var currentCityWeatherIcon = data.current.weather[0].icon;
+            var currentWeatherIconEL = $('<img>');
+            currentWeatherIconEL.attr('src', "http://openweathermap.org/img/wn/" + currentCityWeatherIcon + ".png");
+            cityNameEl.append(currentWeatherIconEL);
+
+            var currentCityTemp = data.current.temp;
+            var currentTempEl = $('<p>')
+            currentTempEl.text(`Temp: ${currentCityTemp}°F`)
+            currentConditionsEl.append(currentTempEl)
+
+            var currentCityWind = data.current.wind_speed;
+            var currentWindEl = $('<p>')
+            currentWindEl.text(`Wind: ${currentCityWind} KPH`)
+            currentConditionsEl.append(currentWindEl);
+
+            var currentCityHumidity = data.current.humidity;
+            var currentHumidityEl = $('<p>')
+            currentHumidityEl.text(`Humidity: ${currentCityHumidity}%`)
+            currentConditionsEl.append(currentHumidityEl);
+
         })
+
+
 
 }
 
