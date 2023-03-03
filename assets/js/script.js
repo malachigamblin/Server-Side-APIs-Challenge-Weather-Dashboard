@@ -1,5 +1,7 @@
 // var APIkey = "f9f8fe997d95f05921c4379ec1099394";
+// var APIkey = "ed0c261d13633def93e4ef40ad9584f2"
 var APIkey = "28192cc5dd81f85bcfd688d592d9a8ab";
+
 
 var currentCity;
 var cityInputEl = $("#city-input");
@@ -47,7 +49,7 @@ function getWeather(data) {
     })
     .then(function (data) {
       var currentConditionsEl = $("#currentConditions");
-      currentConditionsEl.addClass("border border-primary");
+      currentConditionsEl.addClass("border border-primary mt-2");
 
       var cityNameEl = $("<h2>");
       cityNameEl.text(currentCity);
