@@ -22,7 +22,7 @@ The Ohio State University Coding Boot Camp assigned a homework project to create
  
 ## Usage
 
-To search for weather data for a specific city, type its name in the search input field. If you wish to obtain weather data for previously searched cities, click on them in the history section. To clear the search history, click the 'Clear History' button.
+To search for weather data for a specific city, type its name in the search input field. If you wish to obtain weather data for previously searched cities, click on them in the history section. To clear the search history, click the 'Clear Search History' button.
 
 ## Links
 
