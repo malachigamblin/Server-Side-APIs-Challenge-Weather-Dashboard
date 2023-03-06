@@ -1,7 +1,4 @@
-// var APIkey = "f9f8fe997d95f05921c4379ec1099394";
-// var APIkey = "ed0c261d13633def93e4ef40ad9584f2"
 var APIkey = "28192cc5dd81f85bcfd688d592d9a8ab";
-
 
 var currentCity;
 var cityInputEl = $("#city-input");
@@ -97,7 +94,6 @@ function getWeather(data) {
         var wind;
         var humidity;
 
-
         date = data.daily[i].dt;
         date = moment.unix(date).format("MM/DD/YYYY");
         temp = data.daily[i].temp.day;
@@ -116,7 +112,6 @@ function getWeather(data) {
                                        Wind: ${wind} MPH <br>
                                        Humidity: ${humidity}%`;
 
-        
         card.appendChild(cardBody);
         fiveDayForecastEl.append(card);
       }
