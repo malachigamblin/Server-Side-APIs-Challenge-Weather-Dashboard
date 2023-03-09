@@ -26,12 +26,13 @@ To search for weather data for a specific city, type its name in the search inpu
 
 ## Links
 
-Deployed application: https://malachigamblin.github.io/Server-Side-APIs-Challenge-Weather-Dashboard/
+Deployed application: https://malachigamblin.github.io/Weather-Dashboard-Challenge/
 
 ## Screenshot
 
 The following image shows a screenshot of the application:
 <img width="1337" alt="Screenshot 2023-03-05 at 9 39 13 PM" src="https://user-images.githubusercontent.com/118701306/223007089-6e79f2c6-c060-4c2d-bf52-74bb52a5f03c.png">
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
