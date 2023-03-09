@@ -1,4 +1,4 @@
-# Server-Side-APIS-Challenge
+# Weather-Dashboard-Challenge
 
 ## Description
 
