@@ -1,4 +1,4 @@
-# Weather-Dashboard-Challenge
+# Weather-Forecast
 
 ## Description
 
@@ -26,7 +26,7 @@ To search for weather data for a specific city, type its name in the search inpu
 
 ## Links
 
-Deployed application: https://malachigamblin.github.io/Weather-Dashboard-Challenge/
+Deployed application: https://malachigamblin.github.io/Weather-Forecast/
 
 ## Screenshot
 
