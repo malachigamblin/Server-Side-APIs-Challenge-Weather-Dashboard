@@ -1,4 +1,4 @@
-# Weather-Forecast
+# Weather-Dashboard
 
 ## Description
 
